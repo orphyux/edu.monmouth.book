@@ -8,7 +8,9 @@ public class Book {
 	private String title;
 	private double price;
 	
+	public Book () {}
 	//Creates a Book using the setter methods with exception logic. 
+	//public Book(String title, BookTypes bookType, int numberOfPages, double price) throws BookException {
 	public Book(int numberOfPages,double price, String title, BookTypes bookType) throws BookException {
 		setTitle(title);
 		setNumberOfPages(numberOfPages);

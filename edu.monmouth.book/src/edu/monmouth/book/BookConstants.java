@@ -5,6 +5,5 @@ public class BookConstants {
 	public static final int MINTITLELEN = 1;
 	public static final double MINPRICE = 0.00;
 	public static final int MINPAGES = 1;
-	
 
 }

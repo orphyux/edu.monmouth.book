@@ -4,7 +4,7 @@ package edu.monmouth.book;
 public class UseBook {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		Book b1 = null;
 		Book b2 = null;
 		Book b3 = null;
