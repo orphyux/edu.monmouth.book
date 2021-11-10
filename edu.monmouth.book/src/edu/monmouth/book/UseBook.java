@@ -11,7 +11,6 @@ public class UseBook {
 		Book b4 = null;
 		Book b5 = null;
 		
-		//TODO make their own try blocks. 
 		try {
 		 b1 = new Book(90, 8.99,"Lord of the Flies", BookTypes.HARDBACK);
 		 System.out.println(b1);
@@ -69,5 +68,3 @@ public class UseBook {
 
 }
 
-//it still didn't error out! why? 
-//test push

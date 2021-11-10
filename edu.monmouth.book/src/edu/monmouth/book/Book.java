@@ -10,14 +10,12 @@ public class Book {
 	
 	public Book () {}
 	//Creates a Book using the setter methods with exception logic. 
-	//public Book(String title, BookTypes bookType, int numberOfPages, double price) throws BookException {
 	public Book(int numberOfPages,double price, String title, BookTypes bookType) throws BookException {
 		setTitle(title);
 		setNumberOfPages(numberOfPages);
 		setPrice(price);
 		setBookType(bookType);
 	}
-//TODO why a I getting these errors? I was missing the throws BookException at the end.. but i though prof didn't want that? 
 
 	public int getNumberOfPages() {
 		return numberOfPages;
@@ -26,7 +24,7 @@ public class Book {
 
 	public void setNumberOfPages(int inNumberOfPages) throws BookException{
 		numberOfPages = inNumberOfPages;
-		if (numberOfPages < BookConstants.MINPAGES) {   //You put in the hard value not using a final!! DERP. 
+		if (numberOfPages < BookConstants.MINPAGES) {   
 			final String MESSAGE = "Please enter a page length greater than 0";
 			throw new BookException(MESSAGE);
 		}
@@ -67,14 +65,12 @@ public class Book {
 
 
 	public void setPrice(double inPrice) throws BookException {
-		//price = inPrice;
 		if (price < BookConstants.MINPRICE) {
 			final String MESSAGE = "The price of a book cannot be a negative number.  Please enter a value of 0 or above";
 			throw new BookException(MESSAGE);
 		}
 		else {this.price = price;}
 	}
-	//TODO this does not catch a negative double, java sees it as null? 
 	
 	@Override
 	public String toString() {
