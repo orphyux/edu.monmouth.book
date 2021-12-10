@@ -1,7 +1,7 @@
 package edu.monmouth.book;
 
 
-public class Book {
+public class Book implements Comparable<Book> {
 	//Class Variables
 	private int numberOfPages;
 	private BookTypes bookType;
@@ -78,6 +78,48 @@ public class Book {
 				+ price + "]";
 	}
 
+	//added for assignment 6
+	@Override
+	public boolean equals(Object o) {
+		System.out.println("In Book equals...");
+		if (o == null) {
+			return false;
+			}
+		if (!(o instanceof Book)) {
+			return false;
+			}
+		if (o == this) {
+			return true;
+			}
+		Book otherBook = (Book)o;
+		return otherBook.numberOfPages==numberOfPages &&
+				otherBook.price==price &&
+				otherBook.bookType==bookType &&
+				otherBook.title.equals(title);
+		}
 	
+	@Override
+	public int compareTo(Book otherBook) {
+		final int BEFORE = -1;
+		final int EQUAL = 0;
+		final int AFTER = 1;
+		if (this == otherBook) {
+			return EQUAL;
+			}
+		System.out.println("In Book's compareTo");
+		if (this.numberOfPages < otherBook.numberOfPages) {
+			return BEFORE;
+			}
+		if (this.numberOfPages > otherBook.numberOfPages) {
+			return AFTER;
+			}
+		if (this.price < otherBook.price) {
+			return BEFORE;
+		}
+		if (this.price > otherBook.price) {
+			return AFTER;
+		}
+		return this.title.compareTo(otherBook.title);
+		}
 
-}
+}//class
