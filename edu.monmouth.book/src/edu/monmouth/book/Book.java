@@ -64,7 +64,7 @@ public class Book implements Comparable<Book> {
 	}
 
 
-	public void setPrice(double inPrice) throws BookException {
+	public void setPrice(double price) throws BookException {
 		if (price < BookConstants.MINPRICE) {
 			final String MESSAGE = "The price of a book cannot be a negative number.  Please enter a value of 0 or above";
 			throw new BookException(MESSAGE);
